@@ -1,9 +1,11 @@
 .App {
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   height: 100vh;
   font-family: Arial, sans-serif;
+  background-color: burlywood;
+  /* padding-top: 10px; // 避免內容被標頭遮住 */
 }
 
 .container {
@@ -12,6 +14,7 @@
 }
 
 .button-container {
+  text-align: center;
   margin-top: 20px;
 }
 
@@ -20,6 +23,7 @@ button {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
+  background-color: darkgoldenrod;
 }
 
 form {
@@ -37,3 +41,29 @@ input {
   font-size: 16px;
 }
 
+#header_icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#logout {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#dashboard_icon {
+  position: absolute;
+  top: 0;
+  right: 50px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
