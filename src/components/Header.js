@@ -6,8 +6,8 @@ function Header() {
     const location = useLocation();
 
     // 檢查當前路徑是否在登入或註冊頁面
-    const isAuthPage = location.pathname === '/login' || location.pathname === '/signup';
-    const isLogin = location.pathname !== '/' || location.pathname !== '/login' || location.pathname === '/signup';
+    const isAuthPage = location.pathname === '/login' || location.pathname === '/signup' || location.pathname === '/';
+    const isLogin = location.pathname !== '/' && location.pathname !== '/login' && location.pathname !== '/signup';
 
     const returnHomePage = () => {
         if (isAuthPage) {
@@ -22,8 +22,8 @@ function Header() {
     };
 
     return (
-        <header style={{ cursor: /*isAuthPage ? 'pointer' : 'default'*/ 'pointer', padding: '10px' }} onClick={isAuthPage ? returnHomePage : returnFortunePage}>
-        <p id="header_icon">玄門</p>
+        <header style={{ cursor: /*isAuthPage ? 'pointer' : 'default'*/ 'pointer', padding: '10px' }}>
+        <p id="header_icon" onClick={isAuthPage ? returnHomePage : returnFortunePage}>玄門</p>
         </header>
     );
 }
@@ -36,8 +36,22 @@ export function Dashboard() {
     }
 
     return (
-        <header style={{ cursor:  'pointer', padding: '10px' }} onClick={goDashboard}>
-            <p id="dashboard_icon">個人資訊</p>
+        <header style={{ cursor:  'pointer', padding: '10px' }}>
+            <p id="dashboard_icon" onClick={goDashboard}>個人資訊</p>
+        </header>
+    );
+}
+
+export function Fortune() {
+    const navigate = useNavigate();
+    
+    const goFortune = () => {
+        navigate('/fortune')
+    }
+
+    return (
+        <header style={{ cursor:  'pointer', padding: '10px' }}>
+            <p id="dashboard_icon" onClick={goFortune}>卜卦</p>
         </header>
     );
 }

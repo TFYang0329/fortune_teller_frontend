@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthContext';
 import Logout from './Logout';
+import { Fortune } from './Header';
 
 function Dashboard() {
     const { isAuthenticated } = useContext(AuthContext);
@@ -17,6 +18,7 @@ function Dashboard() {
         <div id='dashboard'>
             <h2>Dashboard</h2>
             <p>這是需要登入後才能看到的頁面。</p>
+            <Fortune />
             <Logout />
         </div>
     );
